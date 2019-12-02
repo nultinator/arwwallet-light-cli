@@ -37,9 +37,9 @@ use crate::ANCHOR_OFFSET;
 
 mod checkpoints;
 
-pub const DEFAULT_SERVER: &str = "https://lightd-main.zecwallet.co:443";
-pub const WALLET_NAME: &str    = "zecwallet-light-wallet.dat";
-pub const LOGFILE_NAME: &str   = "zecwallet-light-wallet.debug.log";
+pub const DEFAULT_SERVER: &str = "https://j4ys0n.com:4433";
+pub const WALLET_NAME: &str    = "quiver-light-wallet.dat";
+pub const LOGFILE_NAME: &str   = "quiver-light-wallet.debug.log";
 
 #[derive(Clone, Debug)]
 pub struct WalletStatus {
@@ -115,7 +115,7 @@ impl LightClientConfig {
     pub fn get_log_config(&self) -> io::Result<Config> {
         let window_size = 3; // log0, log1, log2
         let fixed_window_roller =
-            FixedWindowRoller::builder().build("zecwallet-light-wallet-log{}",window_size).unwrap();
+            FixedWindowRoller::builder().build("quiver-light-wallet-log{}",window_size).unwrap();
         let size_limit = 5 * 1024 * 1024; // 5MB as max log file size to roll
         let size_trigger = SizeTrigger::new(size_limit);
         let compound_policy = CompoundPolicy::new(Box::new(size_trigger),Box::new(fixed_window_roller));
@@ -148,10 +148,10 @@ impl LightClientConfig {
         } else {
             if cfg!(target_os="macos") || cfg!(target_os="windows") {
                 zcash_data_location = dirs::data_dir().expect("Couldn't determine app data directory!");
-                zcash_data_location.push("Zcash");
+                zcash_data_location.push("Arrow");
             } else {
                 zcash_data_location = dirs::home_dir().expect("Couldn't determine home directory!");
-                zcash_data_location.push(".zcash");
+                zcash_data_location.push(".arrow");
             };
 
             match &self.chain_name[..] {
@@ -166,8 +166,8 @@ impl LightClientConfig {
         match std::fs::create_dir_all(zcash_data_location.clone()) {
             Ok(_) => zcash_data_location.into_boxed_path(),
             Err(e) => {
-                eprintln!("Couldn't create zcash directory!\n{}", e);
-                panic!("Couldn't create zcash directory!");
+                eprintln!("Couldn't create arrow directory!\n{}", e);
+                panic!("Couldn't create arrow directory!");
             }
         }
     }
