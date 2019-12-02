@@ -31,40 +31,40 @@ tokio-rustls = "0.10.0-alpha.3"
 rustls = { version = "0.15.2", features = ["dangerous_configuration"] }
 webpki = "0.19.1"
 webpki-roots = "0.16.0"
-tower-h2 = { git = "https://github.com/tower-rs/tower-h2", rev="0865040d699697bbaf1c3b77b3f256b72f98cdf4" } 
+tower-h2 = { git = "https://github.com/tower-rs/tower-h2", rev="0865040d699697bbaf1c3b77b3f256b72f98cdf4" }
 rust-embed = { version = "5.1.0", features = ["debug-embed"] }
 rand = "0.7.2"
 sodiumoxide = "0.2.5"
 
 [dependencies.bellman]
-git = "https://github.com/adityapk00/librustzcash.git"
-rev = "188537ea025fcb7fbdfc11266f307a084a5451e4"
+git = "https://github.com/Arrowchain/librustzcash.git"
+rev = "d560bccc0114e2df47ad23347dd1090ca4113e20"
 default-features = false
 features = ["groth16"]
 
 [dependencies.pairing]
-git = "https://github.com/adityapk00/librustzcash.git"
-rev = "188537ea025fcb7fbdfc11266f307a084a5451e4"
+git = "https://github.com/Arrowchain/librustzcash.git"
+rev = "d560bccc0114e2df47ad23347dd1090ca4113e20"
 
 [dependencies.zcash_client_backend]
-git = "https://github.com/adityapk00/librustzcash.git"
-rev = "188537ea025fcb7fbdfc11266f307a084a5451e4"
+git = "https://github.com/Arrowchain/librustzcash.git"
+rev = "d560bccc0114e2df47ad23347dd1090ca4113e20"
 default-features = false
 
 [dependencies.zcash_primitives]
-git = "https://github.com/adityapk00/librustzcash.git"
-rev = "188537ea025fcb7fbdfc11266f307a084a5451e4"
+git = "https://github.com/Arrowchain/librustzcash.git"
+rev = "d560bccc0114e2df47ad23347dd1090ca4113e20"
 default-features = false
 features = ["transparent-inputs"]
 
 [dependencies.zcash_proofs]
-git = "https://github.com/adityapk00/librustzcash.git"
-rev = "188537ea025fcb7fbdfc11266f307a084a5451e4"
+git = "https://github.com/Arrowchain/librustzcash.git"
+rev = "d560bccc0114e2df47ad23347dd1090ca4113e20"
 default-features = false
 
 [dependencies.ff]
-git = "https://github.com/adityapk00/librustzcash.git"
-rev = "188537ea025fcb7fbdfc11266f307a084a5451e4"
+git = "https://github.com/Arrowchain/librustzcash.git"
+rev = "d560bccc0114e2df47ad23347dd1090ca4113e20"
 features = ["ff_derive"]
 
 [build-dependencies]
