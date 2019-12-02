@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "lib",
+    "cli",
+]
+
+[profile.release]
+debug = false
